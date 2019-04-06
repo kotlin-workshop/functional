@@ -2,14 +2,14 @@ package demo.organisation
 
 import org.junit.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertTrue
-
-val accountsDepartment = Department("Accounts")
-val financeDepartment = Department("Finance")
-val hrDepartment = Department("HR")
-val itDepartment = Department("IT")
 
 class OrganizationTest {
+    val accountsDepartment = Department("Accounts")
+    val financeDepartment = Department("Finance")
+    val hrDepartment = Department("HR")
+    val itDepartment = Department("IT")
+
+
     val alice = Employee("Alice", 45000, accountsDepartment)
     val bob = Employee("Bob", 76000, financeDepartment)
     val carol = Employee("Carol", 45000, hrDepartment)
@@ -28,38 +28,38 @@ class OrganizationTest {
         assertEquals(expected, getSalariesOfEmployees(employees))
     }
 
-    @Test
-    fun shouldGiveSumOfAllSalaries() {
-        assertEquals(528000, getTotalSalariesOfAllEmployees(employees))
-    }
-
-    @Test
-    fun shouldGiveTotalSalaryForGivenDepartment() {
-        assertEquals(111000, getTotalSalariesForDepartment(employees, accountsDepartment))
-        assertEquals(92000, getTotalSalariesForDepartment(employees, itDepartment))
-    }
-
-    @Test
-    fun shouldGiveEachDepartmentTotalSalary() {
-        val accountsSalary = Pair(accountsDepartment, 111000)
-        val hrSalary = Pair(hrDepartment, 93000)
-        val itSalary = Pair(itDepartment, 92000)
-        val financeSalary = Pair(financeDepartment, 232000)
-
-        val expected = listOf(accountsSalary, financeSalary, hrSalary, itSalary)
-
-        val actual = getEachDepartmentTotalSalary(employees)
-        assertTrue(actual.containsAll(expected))
-    }
-
-    @Test
-    fun shouldGiveAllDepartmentsForGivenEmployees() {
-        val expected = listOf(accountsDepartment, hrDepartment, itDepartment, financeDepartment)
-        val actual = getAllDepartment(employees)
-        assertTrue(actual.size == expected.size
-                && actual.containsAll(expected)
-                && expected.containsAll(actual))
-
-    }
+//    @Test
+//    fun shouldGiveSumOfAllSalaries() {
+//        assertEquals(528000, getTotalSalariesOfAllEmployees(employees))
+//    }
+//
+//    @Test
+//    fun shouldGiveTotalSalaryForGivenDepartment() {
+//        assertEquals(111000, getTotalSalariesForDepartment(employees, accountsDepartment))
+//        assertEquals(92000, getTotalSalariesForDepartment(employees, itDepartment))
+//    }
+//
+//    @Test
+//    fun shouldGiveEachDepartmentTotalSalary() {
+//        val accountsSalary = Pair(accountsDepartment, 111000)
+//        val hrSalary = Pair(hrDepartment, 93000)
+//        val itSalary = Pair(itDepartment, 92000)
+//        val financeSalary = Pair(financeDepartment, 232000)
+//
+//        val expected = listOf(accountsSalary, financeSalary, hrSalary, itSalary)
+//
+//        val actual = getEachDepartmentTotalSalary(employees)
+//        assertTrue(actual.containsAll(expected))
+//    }
+//
+//    @Test
+//    fun shouldGiveAllDepartmentsForGivenEmployees() {
+//        val expected = listOf(accountsDepartment, hrDepartment, itDepartment, financeDepartment)
+//        val actual = getAllDepartment(employees)
+//        assertTrue(actual.size == expected.size
+//                && actual.containsAll(expected)
+//                && expected.containsAll(actual))
+//
+//    }
 }
 
