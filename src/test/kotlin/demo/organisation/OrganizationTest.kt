@@ -28,22 +28,22 @@ class OrganizationTest {
         assertEquals(expected, getSalariesOfEmployees(employees))
     }
 
-//    @Test
-//    fun shouldGiveSumOfAllSalaries() {
-//        assertEquals(528000, getTotalSalariesOfAllEmployees(employees))
-//    }
-//
-//    @Test
-//    fun shouldGiveTotalSalaryForGivenDepartment() {
-//        assertEquals(111000, getTotalSalariesForDepartment(employees, accountsDepartment))
-//        assertEquals(92000, getTotalSalariesForDepartment(employees, itDepartment))
-//    }
-//
-//    @Test
-//    fun shouldGiveTotalSalaryForGivenDepartments() {
-//        assertEquals(204000, getTotalSalariesForDepartments
-//          (employees, listOf(accountsDepartment, hrDepartment)))
-//    }
+    @Test
+    fun shouldGiveSumOfAllSalaries() {
+        assertEquals(528000, getTotalSalariesOfAllEmployees(employees))
+    }
+
+    @Test
+    fun shouldGiveTotalSalaryForGivenDepartment() {
+        assertEquals(111000, getTotalSalariesForDepartment(employees, accountsDepartment))
+        assertEquals(92000, getTotalSalariesForDepartment(employees, itDepartment))
+    }
+
+    @Test
+    fun shouldGiveTotalSalaryForGivenDepartments() {
+        assertEquals(204000, getTotalSalariesForDepartments
+          (employees, listOf(accountsDepartment, hrDepartment)))
+    }
 
 
 //
