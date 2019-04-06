@@ -13,18 +13,19 @@ fun getSalariesOfEmployees(employees: List<Employee>): List<Int> {
     return employees.map { it.salary }
 }
 
+private fun getTotalSalaryByCriteria(employees: List<Employee>, function: (Employee) -> Boolean): Int {
+    return employees.filter (function).sumBy { it.salary }
+}
+
 fun getTotalSalariesOfAllEmployees(employees: List<Employee>): Int {
-    return getSalariesOfEmployees(employees).sum()
+    return getTotalSalaryByCriteria(employees) { true }
 }
 
 fun getTotalSalariesForDepartment(employees: List<Employee>, department: Department): Int {
-    return employees
-            .filter { it.department == department }
-            .sumBy { it.salary }
+    return getTotalSalaryByCriteria(employees) { it -> it.department == department }
 }
 
 fun getTotalSalariesForDepartments(employees: List<Employee>, departments: List<Department>): Int {
-    return employees
-            .filter { it.department in departments }
-            .sumBy { it.salary }
+    return getTotalSalaryByCriteria(employees) { it.department in departments }
 }
+
