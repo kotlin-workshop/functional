@@ -40,6 +40,14 @@ class OrganizationTest {
 //    }
 //
 //    @Test
+//    fun shouldGiveTotalSalaryForGivenDepartments() {
+//        assertEquals(204000, getTotalSalariesForDepartments
+//          (employees, listOf(accountsDepartment, hrDepartment)))
+//    }
+
+
+//
+//    @Test
 //    fun shouldGiveEachDepartmentTotalSalary() {
 //        val accountsSalary = Pair(accountsDepartment, 111000)
 //        val hrSalary = Pair(hrDepartment, 93000)
